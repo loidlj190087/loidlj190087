@@ -48,7 +48,7 @@ public class EratosthenesPrimeSieve implements PrimeSieve{
         
         
         
-        return primzahl;
+        return primzahl;        //boolean array mit Primzahlen wird zurückgegeben
     }
     
     public int [] berechnePrimzahlenInt(boolean[] pPrimzahl){
@@ -102,6 +102,29 @@ public class EratosthenesPrimeSieve implements PrimeSieve{
         for (int i = 0; i < primzahlenInteger.length; i++) {
             System.out.println(primzahlenInteger[i]);
         }
+        
+        
+        
     }
     
+    public int [] printAufG2(int sum){
+        
+        int[] natürlicheZG = berechnePrimzahlenInt(berechnePrimZahlenBoolean());        //PrimzahlArray
+        int[] twoPrimeArr = new int[2];                                                 //2StelligerArray         
+
+        for (int i = 0; i < (natürlicheZG.length); i++) {
+            for (int j = 0; j < (natürlicheZG.length); j++) {      
+                    if (natürlicheZG[i] + natürlicheZG[j] == sum) {
+                        twoPrimeArr[0] = natürlicheZG[i];        //die zwei gefundenen Zahlen werden ebenfalls in einem int array gespeichert und anschließend returnt
+                        twoPrimeArr[1] = natürlicheZG[j];
+                        return twoPrimeArr;
+                    }
+                }
+            }
+        return null;
+        
+    }
+    
+    
 }
+//commitOne, -commitTwo, commitThree, commitFour, commitFive

@@ -11,7 +11,7 @@ package packageOne;
 public class main {
 
     public static void main(String[] args) {
-        int obergrenze = 200;
+        int obergrenze = 100000;
         
         EratosthenesPrimeSieve ePS = new EratosthenesPrimeSieve(obergrenze);
         
@@ -28,19 +28,24 @@ public class main {
         System.out.println("--------------------------------------");
         System.out.println(" ");
         
-        int eingabePrimzahl = 27;
+        int eingabePrimzahl = 101;
         
-        if (true == ePS.isPrime(eingabePrimzahl)) {
+        if (ePS.isPrime(eingabePrimzahl)) { //==true
             System.out.println(eingabePrimzahl + " ist eine Primzahl");
         }
         else{
             System.out.println(eingabePrimzahl + " ist keine Primzahl");
         }
+        System.out.println(" ");
+        System.out.println("----------");
+        System.out.println(" ");
         
-        
-        
-        
-        
+
+        for (int p = 4; p < eingabePrimzahl; p+=2) {
+            int [] arr = ePS.printAufG2(p);
+
+            System.out.println(arr[0] + " + " +arr[1]  + " = " + p);
+       }
     }
     
 }
