@@ -42,7 +42,7 @@ public class EratosthenesPrimeSieve implements PrimeSieve{
                     if (zahl < this.obergrenze) {
                         primzahl[zahl] = false;
                     }
-                }                                                               // 
+                }                                                               ///
             }
         }
         
